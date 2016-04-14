@@ -3,9 +3,9 @@ require 'csv'
 class SunlightLegislatorsImporter
   def self.import(filename)
     csv = CSV.new(File.open(filename), :headers => true)
-    array = ['firstname', 'lastname','twitter_id']
+    array = ['firstname', 'lastname','twitter_id']        #columns to keep placed in an array
    
-    csv.each do |row|
+    csv.each do |row|       #for each row the row is converted into a hash
       row = row.to_hash
       hash = {}
         row.each do |field, value|
